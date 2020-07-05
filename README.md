@@ -1,4 +1,4 @@
-# spring-boot-async-conflict
+# Spring boot async conflict
 
 Demo how to handle the conflict in shared resources
 
@@ -6,10 +6,10 @@ Demo how to handle the conflict in shared resources
 
 Some internal shared resource can only be used once at a time, so in the API we are just allow one success request on the resource. Other concurrent request will be getting exception with 503 status code. 
 
-The benefits:
+The benefits are:
 
-* Fail the other request in a elegant way;
-* Ensure dedicated access for the 1st user until it finishes its job;
+* Fail the other requests in an elegant way;
+* Ensure dedicated access for the 1st user until it finishes its job; (e.g. for a system does not support multiple logon, to avoid a later user kick out the session of an earlier user. This will lead to a situation that no one can complete its job although it win the resource competition.)
 
 ## Solution
 
